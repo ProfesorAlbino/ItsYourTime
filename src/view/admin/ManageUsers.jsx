@@ -3,7 +3,7 @@ import UserService from '../../service/UserService';
 import BranchService from '../../service/BranchService';
 import AuthService from '../../service/AuthService'; // Import AuthService
 import { Table, Button, Modal, Form, Badge, Spinner, Card } from 'react-bootstrap';
-import { Trash2, Edit, Plus } from 'lucide-react';
+import { Trash2, Edit} from 'lucide-react';
 
 export default function ManageUsers() {
     const [users, setUsers] = useState([]);
@@ -56,19 +56,6 @@ export default function ManageUsers() {
         setShowModal(true);
     };
 
-    const handleAdd = () => {
-        setCurrentUser({
-            nombre: '',
-            apellido: '',
-            cedula: '',
-            password: '',
-            sucursalId: '',
-            isAdmin: false
-        });
-        setIsEditing(false);
-        setShowModal(true);
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -83,8 +70,6 @@ export default function ManageUsers() {
                 // If we want to create an admin, we might need to update the user immediately after creation
                 // or assume backend allows isAdmin in this endpoint if token is Admin (not guaranteed by docs).
                 // Let's try to register then update if isAdmin is true.
-
-                const registerResponse = await AuthService.register(payload);
 
                 // If we want to set isAdmin or isActive different from default
                 if (payload.isAdmin || payload.isActive === false) {

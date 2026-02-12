@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import HoursService from '../../service/HoursService';
 import { Table, Button, Badge, Spinner, Form, Modal, Accordion, Card, Alert, Row, Col } from 'react-bootstrap';
 import { Check, X, User, Clock, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
 
 export default function ApproveHours() {
     const [hours, setHours] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const { user } = useAuth();
 
     // Modal state
     const [showModal, setShowModal] = useState(false);

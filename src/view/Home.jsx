@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
 import HoursService from '../service/HoursService';
 import { Link } from 'react-router-dom';
 import { PlusCircle, Clock, CheckCircle, XCircle, TrendingUp, AlertCircle } from 'lucide-react';
 import { Spinner, Badge, Card, Table, Row, Col, Alert } from 'react-bootstrap';
 
 export default function Home() {
-  const { user } = useAuth();
   const [hours, setHours] = useState([]);
   const [availableHours, setAvailableHours] = useState(null);
   const [loading, setLoading] = useState(true);

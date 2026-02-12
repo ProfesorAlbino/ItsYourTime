@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/components/SideBarStyle.css";
-import { Database, User, Clock, Home, LogOut, Briefcase } from "lucide-react"; // Changed Bolt to Clock/Briefcase for relavancy
+import { User, Clock, Home, LogOut, Briefcase } from "lucide-react"; // Changed Bolt to Clock/Briefcase for relavancy
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
